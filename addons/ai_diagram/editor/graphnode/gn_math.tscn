@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/ai_diagram/editor/graphnode/gn_math.gd" type="Script" id=1]
+
+[node name="gn_math" type="GraphNode"]
+margin_right = 294.0
+margin_bottom = 54.0
+title = "Math"
+show_close = true
+slot/0/left_enabled = true
+slot/0/left_type = 1
+slot/0/left_color = Color( 1, 0, 0, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 320.0
+margin_bottom = 48.0
+
+[node name="le_result" type="LineEdit" parent="HBoxContainer"]
+margin_right = 100.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 100, 0 )
+
+[node name="ob_operator" type="OptionButton" parent="HBoxContainer"]
+margin_left = 104.0
+margin_right = 149.0
+margin_bottom = 24.0
+text = "+="
+items = [ "+=", null, false, 0, null, "-=", null, false, 1, null, "*=", null, false, 2, null, "/=", null, false, 3, null ]
+selected = 0
+
+[node name="ob_datatype" type="OptionButton" parent="HBoxContainer"]
+margin_left = 153.0
+margin_right = 200.0
+margin_bottom = 24.0
+text = "Int"
+items = [ "Int", null, false, 1, null, "Float", null, false, 2, null, "Variable", null, false, 3, null, "Delta", null, false, 3, null ]
+selected = 0
+
+[node name="le_value" type="LineEdit" parent="HBoxContainer"]
+margin_left = 204.0
+margin_right = 304.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 100, 0 )
+text = "1"
+
+[connection signal="close_request" from="." to="." method="_on_gn_math_close_request"]

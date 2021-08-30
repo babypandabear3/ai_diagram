@@ -1,0 +1,162 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/ai_diagram/editor/graphnode/gn_rand_val.gd" type="Script" id=1]
+
+[node name="gn_rand_val" type="GraphNode"]
+margin_right = 32.0
+margin_bottom = 30.0
+title = "Random Value"
+show_close = true
+slot/0/left_enabled = true
+slot/0/left_type = 1
+slot/0/left_color = Color( 1, 0, 0, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+slot/1/left_enabled = false
+slot/1/left_type = 0
+slot/1/left_color = Color( 1, 1, 1, 1 )
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color( 1, 1, 1, 1 )
+slot/2/left_enabled = false
+slot/2/left_type = 0
+slot/2/left_color = Color( 1, 1, 1, 1 )
+slot/2/right_enabled = false
+slot/2/right_type = 0
+slot/2/right_color = Color( 1, 1, 1, 1 )
+slot/3/left_enabled = false
+slot/3/left_type = 0
+slot/3/left_color = Color( 1, 1, 1, 1 )
+slot/3/right_enabled = false
+slot/3/right_type = 0
+slot/3/right_color = Color( 1, 1, 1, 1 )
+slot/4/left_enabled = false
+slot/4/left_type = 0
+slot/4/left_color = Color( 1, 1, 1, 1 )
+slot/4/right_enabled = false
+slot/4/right_type = 0
+slot/4/right_color = Color( 1, 1, 1, 1 )
+slot/5/left_enabled = false
+slot/5/left_type = 0
+slot/5/left_color = Color( 1, 1, 1, 1 )
+slot/5/right_enabled = false
+slot/5/right_type = 0
+slot/5/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 160.0
+margin_bottom = 48.0
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+margin_top = 5.0
+margin_right = 40.0
+margin_bottom = 19.0
+text = "Result"
+
+[node name="le_result" type="LineEdit" parent="HBoxContainer"]
+margin_left = 44.0
+margin_right = 144.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 100, 0 )
+
+[node name="ob_datatype" type="OptionButton" parent="."]
+margin_left = 16.0
+margin_top = 49.0
+margin_right = 160.0
+margin_bottom = 69.0
+text = "Float"
+items = [ "Float", null, false, 0, null, "Integer", null, false, 1, null, "Vector2", null, false, 2, null, "Vector3", null, false, 3, null ]
+selected = 0
+
+[node name="hb1" type="HBoxContainer" parent="."]
+margin_left = 16.0
+margin_top = 70.0
+margin_right = 160.0
+margin_bottom = 94.0
+
+[node name="Label" type="Label" parent="hb1"]
+margin_top = 5.0
+margin_right = 7.0
+margin_bottom = 19.0
+text = "x"
+
+[node name="le_min" type="LineEdit" parent="hb1"]
+margin_left = 11.0
+margin_right = 69.0
+margin_bottom = 24.0
+text = "-1"
+
+[node name="le_max" type="LineEdit" parent="hb1"]
+margin_left = 73.0
+margin_right = 131.0
+margin_bottom = 24.0
+text = "1"
+
+[node name="hb2" type="HBoxContainer" parent="."]
+visible = false
+margin_left = 16.0
+margin_top = 95.0
+margin_right = 160.0
+margin_bottom = 119.0
+
+[node name="Label" type="Label" parent="hb2"]
+margin_top = 5.0
+margin_right = 7.0
+margin_bottom = 19.0
+text = "y"
+
+[node name="le_min" type="LineEdit" parent="hb2"]
+margin_left = 11.0
+margin_right = 69.0
+margin_bottom = 24.0
+text = "-1"
+
+[node name="le_max" type="LineEdit" parent="hb2"]
+margin_left = 73.0
+margin_right = 131.0
+margin_bottom = 24.0
+text = "1"
+
+[node name="hb3" type="HBoxContainer" parent="."]
+visible = false
+margin_left = 16.0
+margin_top = 120.0
+margin_right = 160.0
+margin_bottom = 144.0
+
+[node name="Label" type="Label" parent="hb3"]
+margin_top = 5.0
+margin_right = 7.0
+margin_bottom = 19.0
+text = "z"
+
+[node name="le_min" type="LineEdit" parent="hb3"]
+margin_left = 11.0
+margin_right = 69.0
+margin_bottom = 24.0
+text = "-1"
+
+[node name="le_max" type="LineEdit" parent="hb3"]
+margin_left = 73.0
+margin_right = 131.0
+margin_bottom = 24.0
+text = "1"
+
+[node name="chk_norm" type="CheckBox" parent="."]
+visible = false
+margin_left = 16.0
+margin_top = 145.0
+margin_right = 160.0
+margin_bottom = 169.0
+pressed = true
+text = "Normalized"
+
+[connection signal="close_request" from="." to="." method="_on_gn_rand_val_close_request"]
+[connection signal="item_selected" from="ob_datatype" to="." method="_on_OptionButton_item_selected"]

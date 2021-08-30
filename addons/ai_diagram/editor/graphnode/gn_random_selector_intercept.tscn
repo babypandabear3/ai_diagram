@@ -1,0 +1,52 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/ai_diagram/editor/graphnode/gn_random_selector_intercept.gd" type="Script" id=1]
+
+[node name="gn_random_selector_intercept" type="GraphNode"]
+margin_right = 32.0
+margin_bottom = 30.0
+title = "Random Selector"
+show_close = true
+slot/0/left_enabled = true
+slot/0/left_type = 2
+slot/0/left_color = Color( 0, 1, 0, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+slot/1/left_enabled = false
+slot/1/left_type = 0
+slot/1/left_color = Color( 1, 1, 1, 1 )
+slot/1/right_enabled = true
+slot/1/right_type = 2
+slot/1/right_color = Color( 0, 1, 0, 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 137.0
+margin_bottom = 44.0
+
+[node name="btn_min" type="Button" parent="HBoxContainer"]
+margin_right = 17.0
+margin_bottom = 20.0
+text = "-"
+
+[node name="btn_plus" type="Button" parent="HBoxContainer"]
+margin_left = 21.0
+margin_right = 41.0
+margin_bottom = 20.0
+text = "+"
+
+[node name="Label" type="Label" parent="."]
+margin_left = 16.0
+margin_top = 45.0
+margin_right = 137.0
+margin_bottom = 59.0
+
+[connection signal="close_request" from="." to="." method="_on_gn_random_selector_close_request"]
+[connection signal="button_up" from="HBoxContainer/btn_min" to="." method="_on_btn_min_button_up"]
+[connection signal="button_up" from="HBoxContainer/btn_plus" to="." method="_on_btn_plus_button_up"]

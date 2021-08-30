@@ -1,0 +1,94 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/ai_diagram/editor/graphnode/gn_process_intercept.gd" type="Script" id=1]
+
+[node name="gn_process_intercept" type="GraphNode"]
+margin_right = 90.0
+margin_bottom = 90.0
+title = "Process"
+show_close = true
+slot/0/left_enabled = true
+slot/0/left_type = 2
+slot/0/left_color = Color( 0, 1, 0, 1 )
+slot/0/right_enabled = true
+slot/0/right_type = 2
+slot/0/right_color = Color( 0, 1, 0, 1 )
+slot/1/left_enabled = false
+slot/1/left_type = 0
+slot/1/left_color = Color( 1, 1, 1, 1 )
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color( 1, 1, 1, 1 )
+slot/2/left_enabled = false
+slot/2/left_type = 0
+slot/2/left_color = Color( 1, 1, 1, 1 )
+slot/2/right_enabled = false
+slot/2/right_type = 1
+slot/2/right_color = Color( 1, 0, 0, 1 )
+slot/3/left_enabled = false
+slot/3/left_type = 0
+slot/3/left_color = Color( 1, 1, 1, 1 )
+slot/3/right_enabled = false
+slot/3/right_type = 0
+slot/3/right_color = Color( 1, 0, 0, 1 )
+slot/4/left_enabled = false
+slot/4/left_type = 0
+slot/4/left_color = Color( 1, 1, 1, 1 )
+slot/4/right_enabled = true
+slot/4/right_type = 1
+slot/4/right_color = Color( 1, 0, 0, 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="le_name" type="LineEdit" parent="."]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 176.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 160, 0 )
+
+[node name="ob_runtype" type="OptionButton" parent="."]
+margin_left = 16.0
+margin_top = 49.0
+margin_right = 176.0
+margin_bottom = 69.0
+text = "Timer-Float"
+items = [ "Timer-Float", null, false, 0, null, "Timer-Var", null, false, 1, null ]
+selected = 0
+
+[node name="le_runlength" type="LineEdit" parent="."]
+margin_left = 16.0
+margin_top = 70.0
+margin_right = 176.0
+margin_bottom = 94.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 16.0
+margin_top = 95.0
+margin_right = 176.0
+margin_bottom = 115.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_min" type="Button" parent="HBoxContainer"]
+margin_right = 17.0
+margin_bottom = 20.0
+text = "-"
+
+[node name="btn_plus" type="Button" parent="HBoxContainer"]
+margin_left = 21.0
+margin_right = 41.0
+margin_bottom = 20.0
+text = "+"
+
+[connection signal="close_request" from="." to="." method="_on_gn_process_close_request"]
+[connection signal="text_changed" from="le_name" to="." method="_on_le_name_text_changed"]
+[connection signal="item_selected" from="ob_runtype" to="." method="_on_ob_time_item_selected"]
+[connection signal="text_changed" from="le_runlength" to="." method="_on_le_runlength_text_changed"]
+[connection signal="button_up" from="HBoxContainer/btn_min" to="." method="_on_btn_min_button_up"]
+[connection signal="button_up" from="HBoxContainer/btn_plus" to="." method="_on_btn_plus_button_up"]

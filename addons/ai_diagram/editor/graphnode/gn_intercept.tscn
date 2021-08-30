@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/ai_diagram/editor/graphnode/gn_intercept.gd" type="Script" id=1]
+
+[node name="gn_intercept" type="GraphNode"]
+margin_right = 91.0
+margin_bottom = 62.0
+title = "Intercept"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 75.0
+margin_bottom = 44.0
+
+[node name="btn_min" type="Button" parent="HBoxContainer"]
+margin_right = 17.0
+margin_bottom = 20.0
+text = "-"
+
+[node name="btn_plus" type="Button" parent="HBoxContainer"]
+margin_left = 21.0
+margin_right = 41.0
+margin_bottom = 20.0
+text = "+"
+
+[connection signal="button_up" from="HBoxContainer/btn_min" to="." method="_on_btn_min_button_up"]
+[connection signal="button_up" from="HBoxContainer/btn_plus" to="." method="_on_btn_plus_button_up"]

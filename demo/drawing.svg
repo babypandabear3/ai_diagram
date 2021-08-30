@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)"
+   sodipodi:docname="drawing.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="3.959798"
+     inkscape:cx="289.42923"
+     inkscape:cy="530.87298"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1600"
+     inkscape:window-height="837"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:none;stroke:none;stroke-width:0.101288;stroke-opacity:1"
+       id="rect835"
+       width="8.4666662"
+       height="8.4666662"
+       x="77.433777"
+       y="132.99628"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <g
+       id="g872"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <circle
+         style="fill:#ff0000;stroke:#996d3d;stroke-width:0.163286;stroke-opacity:1"
+         id="path833"
+         cx="81.667107"
+         cy="137.22961"
+         r="3.6156213" />
+      <circle
+         style="fill:#ff8080;stroke:#996d3d;stroke-width:0.108858;stroke-opacity:1"
+         id="circle841"
+         cx="81.667107"
+         cy="137.22961"
+         r="2.4104142" />
+    </g>
+    <g
+       id="g868"
+       transform="matrix(0.86498977,0,0,1,10.95014,0.03340872)"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         style="fill:#e6e6e6;stroke:#996d3d;stroke-width:0.193065;stroke-opacity:1"
+         id="rect837"
+         width="3.7506826"
+         height="1.5059152"
+         x="81.71962"
+         y="136.44583" />
+      <rect
+         style="fill:#e6e6e6;stroke:#996d3d;stroke-width:0.167759;stroke-opacity:1"
+         id="rect839"
+         width="1.7246951"
+         height="2.472636"
+         x="84.62793"
+         y="135.96248" />
+      <circle
+         style="fill:#e6e6e6;stroke:#996d3d;stroke-width:0.0476908;stroke-opacity:1"
+         id="circle849"
+         cx="81.667107"
+         cy="137.22961"
+         r="1.0560089" />
+    </g>
+    <ellipse
+       style="fill:#ffff00;stroke:#996d3d;stroke-width:0.381678;stroke-opacity:1"
+       id="path858"
+       cx="92.933578"
+       cy="137.26692"
+       rx="0.86749452"
+       ry="0.86749458"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       style="fill:none;stroke:none;stroke-width:0.101288;stroke-opacity:1"
+       id="rect847"
+       width="8.4666662"
+       height="8.4666662"
+       x="77.433777"
+       y="143.20163"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       inkscape:export-filename="C:\Users\manus\tank_blue.png" />
+    <g
+       id="g854"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       transform="translate(0,10.205357)"
+       style="fill:#003380"
+       inkscape:export-filename="C:\Users\manus\tank_blue.png">
+      <circle
+         style="fill:#003380;stroke:#996d3d;stroke-width:0.163286;stroke-opacity:1"
+         id="circle850"
+         cx="81.667107"
+         cy="137.22961"
+         r="3.6156213" />
+      <circle
+         style="fill:#0055d4;stroke:#996d3d;stroke-width:0.108858;stroke-opacity:1"
+         id="circle852"
+         cx="81.667107"
+         cy="137.22961"
+         r="2.4104142" />
+    </g>
+    <g
+       id="g862"
+       transform="matrix(0.86498977,0,0,1,10.95014,10.238766)"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       inkscape:export-filename="C:\Users\manus\tank_blue.png">
+      <rect
+         style="fill:#e6e6e6;stroke:#996d3d;stroke-width:0.193065;stroke-opacity:1"
+         id="rect856"
+         width="3.7506826"
+         height="1.5059152"
+         x="81.71962"
+         y="136.44583" />
+      <rect
+         style="fill:#e6e6e6;stroke:#996d3d;stroke-width:0.167759;stroke-opacity:1"
+         id="rect858"
+         width="1.7246951"
+         height="2.472636"
+         x="84.62793"
+         y="135.96248" />
+      <circle
+         style="fill:#e6e6e6;stroke:#996d3d;stroke-width:0.0476908;stroke-opacity:1"
+         id="circle860"
+         cx="81.667107"
+         cy="137.22961"
+         r="1.0560089" />
+    </g>
+  </g>
+</svg>

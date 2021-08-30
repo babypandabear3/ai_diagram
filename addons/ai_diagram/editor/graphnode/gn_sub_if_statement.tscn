@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/ai_diagram/editor/graphnode/gn_sub_if_statement.gd" type="Script" id=1]
+
+[node name="gn_sub_if_statement" type="HBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="le_left" type="LineEdit" parent="."]
+margin_right = 100.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 100, 0 )
+
+[node name="ob_operator" type="OptionButton" parent="."]
+margin_left = 104.0
+margin_right = 154.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 50, 0 )
+text = "="
+items = [ "=", null, false, 0, null, "<", null, false, 1, null, ">", null, false, 2, null, "<=", null, false, 3, null, ">=", null, false, 4, null ]
+selected = 0
+
+[node name="ob_datatype" type="OptionButton" parent="."]
+margin_left = 158.0
+margin_right = 238.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 80, 0 )
+text = "bool"
+items = [ "bool", null, false, 0, null, "str", null, false, 1, null, "int", null, false, 2, null, "float", null, false, 3, null, "variable", null, false, 4, null ]
+selected = 0
+
+[node name="le_right" type="LineEdit" parent="."]
+margin_left = 242.0
+margin_right = 342.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 100, 0 )

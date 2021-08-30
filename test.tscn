@@ -1,0 +1,461 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://addons/ai_diagram/ResourceAIDiagram.gd" type="Script" id=1]
+[ext_resource path="res://demo/tank_blue.tscn" type="PackedScene" id=2]
+[ext_resource path="res://addons/ai_diagram/ai_diagram.gd" type="Script" id=5]
+[ext_resource path="res://demo/tank.tscn" type="PackedScene" id=6]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 1 )
+scroll_offset = Vector2( 799.82, -226.5 )
+graph_nodes = [ {
+"datatype": "Float",
+"max1": "8",
+"max2": "1",
+"max3": "1",
+"min1": "4",
+"min2": "-1",
+"min3": "-1",
+"name": "gn_rand_val2",
+"normalized": true,
+"offset": Vector2( 660, 540 ),
+"result": "timer",
+"type": "gn_rand_val"
+}, {
+"datatype": "Vector2",
+"max1": "1",
+"max2": "1",
+"max3": "1",
+"min1": "-1",
+"min2": "-1",
+"min3": "-1",
+"name": "gn_rand_val",
+"normalized": true,
+"offset": Vector2( 660, 340 ),
+"result": "dir",
+"type": "gn_rand_val"
+}, {
+"break_condition": {
+"conn_port": -1,
+"datatype": "bool",
+"left": "",
+"operator": "=",
+"right": ""
+},
+"chk_break": false,
+"name": "gn_process2",
+"offset": Vector2( 660, 160 ),
+"process": "wander",
+"runlength": "timer",
+"runtype": "Timer-Var",
+"slot_count": 1,
+"type": "gn_process"
+}, {
+"func": "move",
+"name": "gn_func",
+"offset": Vector2( 960, 360 ),
+"return": "",
+"slot_0": {
+"datatype": "Variable",
+"value": "dir"
+},
+"slot_1": {
+"datatype": "Variable",
+"value": "speed"
+},
+"slot_count": 2,
+"type": "gn_func"
+}, {
+"name": "gn_random_selector",
+"offset": Vector2( 920, -180 ),
+"slot_count": 2,
+"type": "gn_random_selector"
+}, {
+"break_condition": {
+"conn_port": -1,
+"datatype": "bool",
+"left": "",
+"operator": "=",
+"right": ""
+},
+"chk_break": false,
+"name": "gn_process3",
+"offset": Vector2( 1220, -160 ),
+"process": "shoot",
+"runlength": "0",
+"runtype": "Timer-Float",
+"slot_count": 1,
+"type": "gn_process"
+}, {
+"name": "gn_set_value",
+"offset": Vector2( 380, 580 ),
+"type": "gn_set_value",
+"value": {
+"datatype": "Float",
+"value": "1200"
+},
+"var": "speed"
+}, {
+"name": "gn_entry",
+"offset": Vector2( 80, 180 ),
+"type": "gn_entry"
+}, {
+"break_condition": {
+"conn_port": -1,
+"datatype": "bool",
+"left": "",
+"operator": "=",
+"right": ""
+},
+"chk_break": false,
+"name": "gn_process",
+"offset": Vector2( 240, 200 ),
+"process": "start_wander",
+"runlength": "0",
+"runtype": "Timer-Float",
+"slot_count": 1,
+"type": "gn_process"
+}, {
+"func": "shoot",
+"name": "gn_func2",
+"offset": Vector2( 1440, 120 ),
+"return": "",
+"slot_count": 0,
+"type": "gn_func"
+} ]
+connections = [ {
+"from": "gn_process",
+"from_port": 1,
+"to": "gn_rand_val",
+"to_port": 0
+}, {
+"from": "gn_process",
+"from_port": 2,
+"to": "gn_rand_val2",
+"to_port": 0
+}, {
+"from": "gn_process",
+"from_port": 0,
+"to": "gn_process2",
+"to_port": 0
+}, {
+"from": "gn_process2",
+"from_port": 1,
+"to": "gn_func",
+"to_port": 0
+}, {
+"from": "gn_entry",
+"from_port": 0,
+"to": "gn_process",
+"to_port": 0
+}, {
+"from": "gn_process2",
+"from_port": 0,
+"to": "gn_random_selector",
+"to_port": 0
+}, {
+"from": "gn_random_selector",
+"from_port": 1,
+"to": "gn_process",
+"to_port": 0
+}, {
+"from": "gn_random_selector",
+"from_port": 0,
+"to": "gn_process3",
+"to_port": 0
+}, {
+"from": "gn_process3",
+"from_port": 1,
+"to": "gn_func2",
+"to_port": 0
+}, {
+"from": "gn_process3",
+"from_port": 0,
+"to": "gn_process",
+"to_port": 0
+}, {
+"from": "gn_process",
+"from_port": 3,
+"to": "gn_set_value",
+"to_port": 0
+} ]
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 1 )
+scroll_offset = Vector2( 0, -44.5 )
+graph_nodes = [ {
+"break_condition": {
+"conn_port": -1,
+"datatype": "bool",
+"left": "",
+"operator": "=",
+"right": ""
+},
+"chk_break": false,
+"name": "gn_process2",
+"offset": Vector2( 660, 140 ),
+"process": "wander",
+"runlength": "timer",
+"runtype": "Timer-Var",
+"slot_count": 1,
+"type": "gn_process"
+}, {
+"func": "move",
+"name": "gn_func",
+"offset": Vector2( 979, 270.58 ),
+"return": "",
+"slot_0": {
+"datatype": "Variable",
+"value": "dir"
+},
+"slot_1": {
+"datatype": "Variable",
+"value": "speed"
+},
+"slot_count": 2,
+"type": "gn_func"
+}, {
+"break_condition": {
+"conn_port": -1,
+"datatype": "bool",
+"left": "",
+"operator": "=",
+"right": ""
+},
+"chk_break": false,
+"name": "gn_process3",
+"offset": Vector2( 1020, 40 ),
+"process": "shoot",
+"runlength": "0",
+"runtype": "Timer-Float",
+"slot_count": 1,
+"type": "gn_process"
+}, {
+"func": "shoot",
+"name": "gn_func2",
+"offset": Vector2( 1414, 202.08 ),
+"return": "",
+"slot_count": 0,
+"type": "gn_func"
+}, {
+"datatype": "Int",
+"name": "gn_math",
+"offset": Vector2( 1420, 340 ),
+"operator": "+=",
+"result": "shoot_count",
+"type": "gn_math",
+"value": "1"
+}, {
+"func": "move",
+"name": "gn_func3",
+"offset": Vector2( 1480, -180 ),
+"return": "",
+"slot_0": {
+"datatype": "Variable",
+"value": "dir"
+},
+"slot_1": {
+"datatype": "Variable",
+"value": "speed"
+},
+"slot_count": 2,
+"type": "gn_func"
+}, {
+"break_condition": {
+"conn_port": -1,
+"datatype": "bool",
+"left": "",
+"operator": "=",
+"right": ""
+},
+"chk_break": false,
+"name": "gn_process4",
+"offset": Vector2( 1120, -280 ),
+"process": "wait",
+"runlength": "0.5",
+"runtype": "Timer-Float",
+"slot_count": 1,
+"type": "gn_process"
+}, {
+"name": "gn_if_pcs",
+"offset": Vector2( 640, -160 ),
+"slot_0": {
+"conn_port": 1,
+"datatype": "int",
+"left": "shoot_count",
+"operator": "<",
+"right": "3"
+},
+"slot_count": 1,
+"type": "gn_if_pcs"
+}, {
+"name": "gn_set_value2",
+"offset": Vector2( 1521, -293.5 ),
+"type": "gn_set_value",
+"value": {
+"datatype": "Float",
+"value": "0"
+},
+"var": "speed"
+}, {
+"datatype": "Vector2",
+"max1": "1",
+"max2": "1",
+"max3": "1",
+"min1": "-1",
+"min2": "-1",
+"min3": "-1",
+"name": "gn_rand_val",
+"normalized": true,
+"offset": Vector2( 720, 320 ),
+"result": "dir",
+"type": "gn_rand_val"
+}, {
+"datatype": "Float",
+"max1": "8",
+"max2": "1",
+"max3": "1",
+"min1": "5",
+"min2": "-1",
+"min3": "-1",
+"name": "gn_rand_val2",
+"normalized": true,
+"offset": Vector2( 720, 520 ),
+"result": "timer",
+"type": "gn_rand_val"
+}, {
+"name": "gn_set_value",
+"offset": Vector2( 720, 720 ),
+"type": "gn_set_value",
+"value": {
+"datatype": "Integer",
+"value": "0"
+},
+"var": "shoot_count"
+}, {
+"name": "gn_set_value3",
+"offset": Vector2( 720, 820 ),
+"type": "gn_set_value",
+"value": {
+"datatype": "Float",
+"value": "1200"
+},
+"var": "speed"
+}, {
+"break_condition": {
+"conn_port": -1,
+"datatype": "bool",
+"left": "",
+"operator": "=",
+"right": ""
+},
+"chk_break": false,
+"name": "gn_process",
+"offset": Vector2( 240, 200 ),
+"process": "start_wander",
+"runlength": "0",
+"runtype": "Timer-Float",
+"slot_count": 1,
+"type": "gn_process"
+}, {
+"name": "gn_entry",
+"offset": Vector2( 20, 180 ),
+"type": "gn_entry"
+} ]
+connections = [ {
+"from": "gn_entry",
+"from_port": 0,
+"to": "gn_process",
+"to_port": 0
+}, {
+"from": "gn_process",
+"from_port": 1,
+"to": "gn_rand_val",
+"to_port": 0
+}, {
+"from": "gn_process",
+"from_port": 2,
+"to": "gn_rand_val2",
+"to_port": 0
+}, {
+"from": "gn_process",
+"from_port": 0,
+"to": "gn_process2",
+"to_port": 0
+}, {
+"from": "gn_process",
+"from_port": 3,
+"to": "gn_set_value",
+"to_port": 0
+}, {
+"from": "gn_process2",
+"from_port": 1,
+"to": "gn_func",
+"to_port": 0
+}, {
+"from": "gn_process2",
+"from_port": 0,
+"to": "gn_process3",
+"to_port": 0
+}, {
+"from": "gn_process3",
+"from_port": 1,
+"to": "gn_func2",
+"to_port": 0
+}, {
+"from": "gn_process3",
+"from_port": 2,
+"to": "gn_math",
+"to_port": 0
+}, {
+"from": "gn_process3",
+"from_port": 0,
+"to": "gn_if_pcs",
+"to_port": 0
+}, {
+"from": "gn_process4",
+"from_port": 2,
+"to": "gn_func3",
+"to_port": 0
+}, {
+"from": "gn_process4",
+"from_port": 0,
+"to": "gn_process3",
+"to_port": 0
+}, {
+"from": "gn_if_pcs",
+"from_port": 1,
+"to": "gn_process4",
+"to_port": 0
+}, {
+"from": "gn_if_pcs",
+"from_port": 0,
+"to": "gn_process",
+"to_port": 0
+}, {
+"from": "gn_process4",
+"from_port": 1,
+"to": "gn_set_value2",
+"to_port": 0
+}, {
+"from": "gn_process",
+"from_port": 4,
+"to": "gn_set_value3",
+"to_port": 0
+} ]
+
+[node name="test" type="Node2D"]
+
+[node name="tank" parent="." instance=ExtResource( 6 )]
+position = Vector2( 619.086, 352.403 )
+
+[node name="AI_Diagram" type="Node" parent="tank"]
+script = ExtResource( 5 )
+datares = SubResource( 1 )
+
+[node name="tank_blue" parent="." instance=ExtResource( 2 )]
+position = Vector2( 352.778, 240.645 )
+
+[node name="AI_Diagram" type="Node" parent="tank_blue"]
+script = ExtResource( 5 )
+datares = SubResource( 2 )

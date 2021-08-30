@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/ai_diagram/editor/graphnode/gn_sub_param.gd" type="Script" id=1]
+
+[node name="gn_sub_param" type="HBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ob_type" type="OptionButton" parent="."]
+margin_right = 90.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 90, 0 )
+text = "Bool"
+items = [ "Bool", null, false, 0, null, "Integer", null, false, 1, null, "Float", null, false, 2, null, "String", null, false, 3, null, "Variable", null, false, 4, null, "Vector2", null, false, 5, null, "Vector3", null, false, 6, null ]
+selected = 0
+
+[node name="le_value" type="LineEdit" parent="."]
+margin_left = 94.0
+margin_right = 194.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 100, 0 )
+
+[connection signal="item_selected" from="ob_type" to="." method="_on_ob_type_item_selected"]
+[connection signal="text_changed" from="le_value" to="." method="_on_le_value_text_changed"]
